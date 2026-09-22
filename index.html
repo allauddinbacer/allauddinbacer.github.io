@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(1,9,16,.78)
 .photo-orbit:after{content:"";position:absolute;width:520px;height:570px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(0,217,255,.13);box-shadow:inset 0 0 55px rgba(0,217,255,.06),0 0 55px rgba(0,217,255,.08);pointer-events:none}
 .photo-core{width:405px;height:510px;border-radius:46% 46% 24px 24px;padding:0;overflow:hidden;position:relative;z-index:4;background:linear-gradient(180deg,rgba(0,217,255,.12),rgba(2,11,19,.12));box-shadow:0 0 55px rgba(0,217,255,.25),0 0 110px rgba(0,217,255,.10)}
 .photo-core:before{content:"";position:absolute;inset:-1px;border:1px solid rgba(0,217,255,.28);border-radius:46% 46% 24px 24px;box-shadow:inset 0 0 28px rgba(0,217,255,.08);z-index:6;pointer-events:none}
-.profile{width:100%;height:100%;object-fit:cover;object-position:center 18%;position:relative;z-index:5;filter:grayscale(70%) contrast(1.12) brightness(.82);mix-blend-mode:screen;box-shadow:0 0 45px rgba(0,217,255,.24)}
+.profile{width:100%;height:100%;object-fit:cover;object-position:center 18%;position:relative;z-index:5;filter:none;mix-blend-mode:normal;box-shadow:0 0 45px rgba(0,217,255,.24)}
 .orbit-ring{position:absolute;inset:0;z-index:8;animation:none}
 .orbit-badge{position:absolute;z-index:9;width:174px;min-height:58px;display:flex;flex-direction:column;justify-content:center;background:rgba(2,10,19,.90);border:1px solid rgba(0,217,255,.38);padding:10px 14px;border-radius:7px;font:700 .68rem "Space Mono",monospace;color:#aebfc9;box-shadow:0 8px 24px rgba(0,0,0,.50),0 0 15px rgba(0,217,255,.07);text-align:left;transform:none;animation:cardFloat 5.5s ease-in-out infinite}
 .orbit-badge:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);position:absolute;left:9px;top:9px}
@@ -119,6 +119,35 @@ section{padding:85px 0;border-top:1px solid rgba(0,217,255,.08)}
 .project-card .project-body{padding:20px}
 .project-card .project-top{height:95px;background:linear-gradient(135deg,rgba(0,217,255,.15),rgba(139,92,246,.12));display:grid;place-items:center;color:var(--cyan)}
 .project-card p{margin-top:8px}
+
+.practice-viewport{position:relative;overflow:hidden;padding:4px 0 18px}
+.practice-viewport:before,.practice-viewport:after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:5;pointer-events:none}
+.practice-viewport:before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.practice-viewport:after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.practice-track{display:flex;gap:18px;width:max-content;animation:practiceSlide 42s linear infinite;will-change:transform}
+.practice-track:hover{animation-play-state:paused}
+.practice-card{width:360px;min-width:360px;padding:0;min-height:330px;display:flex;flex-direction:column;cursor:pointer}
+.practice-card:before{z-index:2}
+.practice-photo{height:205px;overflow:hidden;position:relative;background:#071722}
+.practice-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease,filter .3s ease}
+.practice-card:hover .practice-photo img{transform:scale(1.045)}
+.practice-photo:after{content:"VIEW PHOTO";position:absolute;right:12px;bottom:12px;padding:5px 8px;border:1px solid rgba(0,217,255,.45);background:rgba(2,10,19,.82);color:var(--cyan);font:700 .58rem "Space Mono",monospace;letter-spacing:1px;opacity:0;transition:.25s}
+.practice-card:hover .practice-photo:after{opacity:1}
+.practice-body{padding:17px 18px 19px;display:flex;flex-direction:column;flex:1}
+.practice-body h3{font-size:1rem;line-height:1.3;margin:7px 0}
+.practice-body p{font-size:.76rem;color:var(--muted);margin-top:auto}
+.practice-meta{font:700 .62rem "Space Mono",monospace;color:var(--cyan);text-transform:uppercase;letter-spacing:1px}
+.practice-title{white-space:nowrap}
+@keyframes practiceSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lightbox{position:fixed;inset:0;z-index:3000;background:rgba(0,6,12,.94);display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:84vh;object-fit:contain;border:1px solid rgba(0,217,255,.35);box-shadow:0 0 60px rgba(0,217,255,.15)}
+.lightbox-close{position:absolute;top:24px;right:28px;width:44px;height:44px;border:1px solid rgba(0,217,255,.45);background:rgba(2,10,19,.9);color:var(--cyan);font:700 1.5rem Inter,sans-serif;border-radius:5px;cursor:pointer}
+.lightbox-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);max-width:80vw;text-align:center;color:#dce8ee;font-size:.82rem;background:rgba(2,10,19,.88);padding:8px 14px;border:1px solid rgba(0,217,255,.22);border-radius:5px}
+@media(max-width:900px){.practice-card{width:320px;min-width:320px}}
+@media(max-width:560px){.practice-title{font-size:1.55rem}.practice-card{width:285px;min-width:285px}.practice-photo{height:190px}.lightbox{padding:18px}.lightbox img{max-width:96vw;max-height:78vh}.practice-track{animation-duration:36s}}
+@media(prefers-reduced-motion:reduce){.practice-track{animation:none}.practice-track:hover{animation:none}}
+
 .contact{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:center}
 .contact-box{background:linear-gradient(135deg,rgba(0,217,255,.10),rgba(139,92,246,.08));border:1px solid rgba(0,217,255,.2);padding:32px;border-radius:8px}
 .contact-box h3{font-size:1.7rem;margin-bottom:8px}
@@ -156,6 +185,7 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
       <li><a href="#competencies">Competencies</a></li>
       <li><a href="#highlights">Highlights</a></li>
       <li><a href="#engagements">Engagements</a></li>
+      <li><a href="#practice">Practice</a></li>
       <li><a href="#passion">Passion</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a class="nav-cv" href="Alla_Ud_Din_CV.pdf" download>Download CV</a></li>
@@ -311,6 +341,84 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
     </div>
   </section>
 
+
+  <section id="practice">
+    <div class="section-head">
+      <div class="section-kicker">Knowledge Sharing & Field Practice</div>
+      <h2 class="section-title practice-title">Knowledge Sharing & Thought <span>Leadership</span></h2>
+      <p class="section-subtitle">Turning expertise into shared learning across platforms.</p>
+    </div>
+
+    <div class="practice-viewport">
+      <div class="practice-track">
+      <article class="card practice-card" data-photo="01_field_assessment.jpg" data-caption="Field Assessment & Community Discussion">
+        <div class="practice-photo"><img src="01_field_assessment.jpg" alt="Field Assessment & Community Discussion"></div>
+        <div class="practice-body"><div class="practice-meta">Field Monitoring</div><h3>Field Assessment & Community Discussion</h3><p>Engaging women’s cooperative members during field assessment and evidence collection.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="02_rbm_training.jpg" data-caption="Results-Based Management Training">
+        <div class="practice-photo"><img src="02_rbm_training.jpg" alt="Results-Based Management Training"></div>
+        <div class="practice-body"><div class="practice-meta">Capacity Building</div><h3>Results-Based Management Training</h3><p>Facilitating RBM learning for WPHF partners in Liberia.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="03_joint_monitoring.jpg" data-caption="Joint Programme Monitoring Mission">
+        <div class="practice-photo"><img src="03_joint_monitoring.jpg" alt="Joint Programme Monitoring Mission"></div>
+        <div class="practice-body"><div class="practice-meta">Joint Monitoring</div><h3>Joint Programme Monitoring Mission</h3><p>Programme monitoring and stakeholder engagement in the field.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="04_stakeholder_engagement.jpg" data-caption="Stakeholder & Community Engagement">
+        <div class="practice-photo"><img src="04_stakeholder_engagement.jpg" alt="Stakeholder & Community Engagement"></div>
+        <div class="practice-body"><div class="practice-meta">Engagement</div><h3>Stakeholder & Community Engagement</h3><p>Participating in stakeholder and community-facing engagement activities.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="05_results_monitoring_reporting.jpg" data-caption="Results-Based Monitoring & Reporting">
+        <div class="practice-photo"><img src="05_results_monitoring_reporting.jpg" alt="Results-Based Monitoring & Reporting"></div>
+        <div class="practice-body"><div class="practice-meta">Results Reporting</div><h3>Results-Based Monitoring & Reporting</h3><p>Presenting practical approaches to results monitoring and reporting.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="06_me_presentation.jpg" data-caption="M&E Presentation & Facilitation">
+        <div class="practice-photo"><img src="06_me_presentation.jpg" alt="M&E Presentation & Facilitation"></div>
+        <div class="practice-body"><div class="practice-meta">M&E Practice</div><h3>M&E Presentation & Facilitation</h3><p>Facilitating learning on why monitoring results matter for programme performance.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="07_capacity_building_discussion.jpg" data-caption="Capacity Building & Technical Support">
+        <div class="practice-photo"><img src="07_capacity_building_discussion.jpg" alt="Capacity Building & Technical Support"></div>
+        <div class="practice-body"><div class="practice-meta">Technical Support</div><h3>Capacity Building & Technical Support</h3><p>Supporting participants through practical technical discussion and problem-solving.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="08_capacity_building_facilitation.jpg" data-caption="Facilitation & Knowledge Sharing">
+        <div class="practice-photo"><img src="08_capacity_building_facilitation.jpg" alt="Facilitation & Knowledge Sharing"></div>
+        <div class="practice-body"><div class="practice-meta">Knowledge Sharing</div><h3>Facilitation & Knowledge Sharing</h3><p>Creating practical spaces for learning, discussion and shared experience.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="01_field_assessment.jpg" data-caption="Field Assessment & Community Discussion">
+        <div class="practice-photo"><img src="01_field_assessment.jpg" alt="Field Assessment & Community Discussion"></div>
+        <div class="practice-body"><div class="practice-meta">Field Monitoring</div><h3>Field Assessment & Community Discussion</h3><p>Engaging women’s cooperative members during field assessment and evidence collection.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="02_rbm_training.jpg" data-caption="Results-Based Management Training">
+        <div class="practice-photo"><img src="02_rbm_training.jpg" alt="Results-Based Management Training"></div>
+        <div class="practice-body"><div class="practice-meta">Capacity Building</div><h3>Results-Based Management Training</h3><p>Facilitating RBM learning for WPHF partners in Liberia.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="03_joint_monitoring.jpg" data-caption="Joint Programme Monitoring Mission">
+        <div class="practice-photo"><img src="03_joint_monitoring.jpg" alt="Joint Programme Monitoring Mission"></div>
+        <div class="practice-body"><div class="practice-meta">Joint Monitoring</div><h3>Joint Programme Monitoring Mission</h3><p>Programme monitoring and stakeholder engagement in the field.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="04_stakeholder_engagement.jpg" data-caption="Stakeholder & Community Engagement">
+        <div class="practice-photo"><img src="04_stakeholder_engagement.jpg" alt="Stakeholder & Community Engagement"></div>
+        <div class="practice-body"><div class="practice-meta">Engagement</div><h3>Stakeholder & Community Engagement</h3><p>Participating in stakeholder and community-facing engagement activities.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="05_results_monitoring_reporting.jpg" data-caption="Results-Based Monitoring & Reporting">
+        <div class="practice-photo"><img src="05_results_monitoring_reporting.jpg" alt="Results-Based Monitoring & Reporting"></div>
+        <div class="practice-body"><div class="practice-meta">Results Reporting</div><h3>Results-Based Monitoring & Reporting</h3><p>Presenting practical approaches to results monitoring and reporting.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="06_me_presentation.jpg" data-caption="M&E Presentation & Facilitation">
+        <div class="practice-photo"><img src="06_me_presentation.jpg" alt="M&E Presentation & Facilitation"></div>
+        <div class="practice-body"><div class="practice-meta">M&E Practice</div><h3>M&E Presentation & Facilitation</h3><p>Facilitating learning on why monitoring results matter for programme performance.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="07_capacity_building_discussion.jpg" data-caption="Capacity Building & Technical Support">
+        <div class="practice-photo"><img src="07_capacity_building_discussion.jpg" alt="Capacity Building & Technical Support"></div>
+        <div class="practice-body"><div class="practice-meta">Technical Support</div><h3>Capacity Building & Technical Support</h3><p>Supporting participants through practical technical discussion and problem-solving.</p></div>
+      </article>
+      <article class="card practice-card" data-photo="08_capacity_building_facilitation.jpg" data-caption="Facilitation & Knowledge Sharing">
+        <div class="practice-photo"><img src="08_capacity_building_facilitation.jpg" alt="Facilitation & Knowledge Sharing"></div>
+        <div class="practice-body"><div class="practice-meta">Knowledge Sharing</div><h3>Facilitation & Knowledge Sharing</h3><p>Creating practical spaces for learning, discussion and shared experience.</p></div>
+      </article>
+      </div>
+    </div>
+  </section>
+
   <section id="passion">
     <div class="section-head">
       <div class="section-kicker">Passion</div>
@@ -353,5 +461,35 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 </footer>
 
 <script>lucide.createIcons();</script>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close photo">×</button>
+  <img id="lightboxImage" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+lucide.createIcons();
+const lightbox=document.getElementById('lightbox');
+const lightboxImage=document.getElementById('lightboxImage');
+const lightboxCaption=document.getElementById('lightboxCaption');
+document.querySelectorAll('.practice-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    lightboxImage.src=card.dataset.photo;
+    lightboxImage.alt=card.dataset.caption;
+    lightboxCaption.textContent=card.dataset.caption;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+  });
+});
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  lightboxImage.src='';
+}
+document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+</script>
 </body>
 </html>
