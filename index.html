@@ -252,6 +252,111 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 @media(max-width:650px){.video-hero{min-height:760px}.video-stage{height:660px}.video-photo-wrap{top:8%;width:310px;height:470px}.video-photo-frame{width:305px;height:460px}.video-badge{min-width:0;width:auto;padding:8px 9px}.video-badge .badge-label{font-size:.46rem}.video-badge strong{font-size:.63rem}.vb1{left:0}.vb2{right:0}.vb3{left:0}.vb4{right:0}.vb5{left:0}.vb6{right:0}.vb7{left:4%}}
 
 </style>
+
+<style>
+/* ===== Separate Hero Introduction and Portrait ===== */
+.video-intro{left:3%;top:18%;width:340px;z-index:12;}
+.video-photo-wrap{left:69%;top:8%;z-index:5;}
+.video-stage .video-badge{z-index:10;}
+@media(max-width:1100px) and (min-width:901px){
+  .video-intro{left:2%;width:300px;}
+  .video-photo-wrap{left:70%;width:400px;}
+  .video-photo-frame{width:390px;}
+}
+@media(max-width:900px){
+  .video-intro{left:50%;top:2%;width:92%;text-align:center;}
+  .video-photo-wrap{left:50%;top:30%;width:430px;}
+}
+</style>
+
+<style>
+/* ===== Hero layout inspired by the supplied reference: clear left intro + separate right portrait ===== */
+.video-hero{min-height:760px;padding:80px 0 24px;background:#020b13;}
+.video-stage{width:min(1500px,94%);height:650px;margin:auto;position:relative;}
+.video-stage:before{left:72%;top:5%;width:600px;height:600px;transform:translateX(-50%);border-color:rgba(0,229,255,.11);}
+.video-stage:after{left:72%;top:10%;width:520px;height:520px;transform:translateX(-50%);}
+.video-glow{left:72%;top:8%;width:500px;height:570px;transform:translateX(-50%);}
+.video-intro{position:absolute;left:0;top:9%;width:50%;max-width:680px;z-index:20;text-align:left;font-family:Inter,sans-serif;}
+.video-intro .intro-kicker{font:700 .65rem/1.2 "Space Mono",monospace;letter-spacing:2px;color:var(--cyan);border-left:2px solid var(--cyan);padding-left:12px;margin-bottom:22px;}
+.video-intro h1{font-family:Inter,sans-serif;font-size:clamp(3.8rem,6vw,6.4rem);font-weight:800;line-height:.91;letter-spacing:-4px;margin:0 0 24px;color:#dce7ee;max-width:620px;}
+.video-intro h1 span{display:block;color:var(--cyan);}
+.video-intro .intro-role{font-family:Inter,sans-serif;font-size:1.45rem;font-weight:700;line-height:1.35;color:#aebdca;border-left:2px solid var(--cyan);padding-left:16px;margin:0 0 24px;max-width:590px;}
+.video-intro .intro-role strong{color:#b9c8d3;}
+.video-intro .intro-line{display:none;}
+.video-intro .intro-copy{font:400 1rem/1.7 Inter,sans-serif;color:#8fa1ad;max-width:610px;margin:0 0 28px;}
+.video-intro .intro-copy strong{color:var(--cyan);}
+.video-intro-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.intro-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border:1px solid rgba(0,217,255,.35);border-radius:5px;background:rgba(5,20,30,.82);color:#b9c8d3;text-decoration:none;font:700 .85rem Inter,sans-serif;transition:.2s;}
+.intro-btn:hover{transform:translateY(-2px);border-color:var(--cyan);color:#fff;box-shadow:0 0 20px rgba(0,217,255,.12);}
+.intro-btn-primary{background:var(--cyan);color:#001018;border-color:var(--cyan);padding:0 26px;}
+.intro-btn-primary:hover{color:#001018;box-shadow:0 0 28px rgba(0,217,255,.25);}
+.intro-icon-btn{width:52px;padding:0;font-family:"Space Mono",monospace;font-size:1rem;color:var(--cyan);}
+.video-photo-wrap{left:72%;top:7%;width:440px;height:570px;transform:translateX(-50%);z-index:6;}
+.video-photo-frame{width:420px;height:550px;border:0;overflow:hidden;background:transparent;mask-image:none;-webkit-mask-image:none;}
+.video-profile{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:none;opacity:1;}
+.video-photo-halo{width:460px;height:560px;top:5px;background:radial-gradient(ellipse,rgba(0,229,255,.18),transparent 67%);}
+.video-corner{width:40px;height:40px;z-index:9;}
+.vc-tl{left:58%;top:3%;border-left:2px solid var(--cyan)!important;border-top:2px solid var(--cyan)!important}
+.vc-tr{right:4%;top:3%;border-right:2px solid var(--cyan)!important;border-top:2px solid var(--cyan)!important}
+.vc-bl{left:59%;bottom:8%;border-left:2px solid var(--cyan)!important;border-bottom:2px solid var(--cyan)!important}
+.vc-br{right:5%;bottom:8%;border-right:2px solid var(--cyan)!important;border-bottom:2px solid var(--cyan)!important}
+.video-badge{min-width:170px;padding:10px 13px;z-index:15;background:rgba(3,15,24,.94);border:1px solid rgba(0,229,255,.34);border-radius:5px;box-shadow:0 0 18px rgba(0,229,255,.06);}
+.video-badge .badge-label{font-size:.52rem;letter-spacing:1.5px;color:#8296a3;margin-bottom:5px;}
+.video-badge strong{font-size:.78rem;color:#d8e6ec;}
+.video-badge strong em{color:var(--cyan);}
+.vb1{left:70%;top:0%;min-width:130px;}
+.vb2{right:0%;top:7%;min-width:165px;}
+.vb3{left:61%;top:24%;min-width:145px;}
+.vb4{right:1%;top:34%;min-width:165px;}
+.vb5{left:61%;bottom:21%;min-width:180px;}
+.vb6{right:0%;bottom:22%;min-width:160px;}
+.vb7{left:59%;bottom:4%;min-width:175px;}
+.video-statement{left:72%;bottom:0%;width:380px;transform:translateX(-50%);padding:12px 18px;font-size:.67rem;z-index:18;}
+@media(max-width:1100px) and (min-width:901px){
+  .video-stage{width:96%;}
+  .video-intro{width:49%;}
+  .video-intro h1{font-size:4.5rem;}
+  .video-intro .intro-role{font-size:1.15rem;}
+  .video-intro .intro-copy{font-size:.9rem;max-width:500px;}
+  .video-photo-wrap{left:73%;width:390px;}
+  .video-photo-frame{width:370px;height:510px;}
+  .video-stage:before{left:73%;}
+  .video-stage:after{left:73%;}
+  .video-glow{left:73%;}
+  .video-statement{left:73%;width:340px;}
+}
+@media(max-width:900px){
+  .video-hero{min-height:1100px;padding-top:105px;}
+  .video-stage{height:1000px;width:94%;}
+  .video-intro{left:0;top:0;width:100%;max-width:none;text-align:left;}
+  .video-intro h1{font-size:4rem;}
+  .video-intro .intro-role{font-size:1.15rem;max-width:600px;}
+  .video-photo-wrap{left:50%;top:44%;width:380px;height:500px;}
+  .video-photo-frame{width:365px;height:480px;}
+  .video-stage:before{left:50%;top:40%;width:500px;height:500px;}
+  .video-stage:after{left:50%;top:44%;width:430px;height:430px;}
+  .video-glow{left:50%;top:42%;}
+  .video-badge{display:none;}
+  .vc-tl{left:30%;top:40%;}.vc-tr{right:30%;top:40%;}.vc-bl{left:30%;bottom:12%;}.vc-br{right:30%;bottom:12%;}
+  .video-statement{left:50%;bottom:2%;width:80%;}
+}
+@media(max-width:560px){
+  .video-hero{min-height:980px;}
+  .video-stage{height:890px;}
+  .video-intro h1{font-size:3.2rem;letter-spacing:-2.5px;}
+  .video-intro .intro-role{font-size:1rem;}
+  .video-intro .intro-copy{font-size:.85rem;}
+  .video-photo-wrap{top:47%;width:310px;height:420px;}
+  .video-photo-frame{width:300px;height:400px;}
+  .video-stage:before{top:43%;width:350px;height:420px;}
+  .video-stage:after{top:47%;width:310px;height:370px;}
+  .video-glow{top:45%;width:340px;height:430px;}
+  .video-statement{width:94%;font-size:.58rem;}
+  .intro-btn{min-height:46px;padding:0 14px;font-size:.76rem;}
+  .intro-icon-btn{width:46px;padding:0;}
+}
+</style>
+
 </head>
 
 <body>
@@ -291,6 +396,11 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
         <p class="intro-role">Monitoring, Evaluation &amp; <strong>Knowledge Management Specialist</strong></p>
         <div class="intro-line"></div>
         <p class="intro-copy">With <strong>14+ years</strong> across the UN and international development sector, I use evidence, data and knowledge to support measurable results for gender equality, inclusive development and resilient communities.</p>
+        <div class="video-intro-actions">
+          <a class="intro-btn intro-btn-primary" href="Alla_Ud_Din_CV.pdf" download>↓&nbsp; Download CV</a>
+          <a class="intro-btn" href="#contact">✉&nbsp; Contact</a>
+          <a class="intro-btn intro-icon-btn" href="https://www.linkedin.com/in/allauddinbacer/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
       </div>
 
       <div class="video-badge vb1"><span class="badge-label">WORK EXPERIENCE</span><strong>14+ <em>Years</em></strong></div>
