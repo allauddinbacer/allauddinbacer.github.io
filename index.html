@@ -179,6 +179,37 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
   .cards{grid-template-columns:1fr}.journey-grid{grid-template-columns:1fr}.section-title{font-size:2rem}
   .footer-row{flex-direction:column}
 }
+
+/* Video-inspired hero: keeps the original profile.jpg file untouched and styles it only here. */
+.video-hero{min-height:850px;padding:96px 0 40px;display:block;position:relative;overflow:hidden;background:#010812}
+.video-hero-bg{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(circle at 50% 48%,rgba(0,217,255,.12),transparent 23%),
+  radial-gradient(circle at 50% 50%,rgba(0,96,145,.16),transparent 43%),
+  linear-gradient(rgba(0,217,255,.028) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,217,255,.028) 1px,transparent 1px);
+  background-size:auto,auto,36px 36px,36px 36px;}
+.video-stage{position:relative;width:min(1100px,96%);height:735px;margin:auto;isolation:isolate}
+.video-stage:before{content:"";position:absolute;left:50%;top:8%;width:610px;height:610px;transform:translateX(-50%);border:1px solid rgba(0,217,255,.08);border-radius:50%;box-shadow:0 0 80px rgba(0,217,255,.06) inset;}
+.video-stage:after{content:"";position:absolute;left:50%;top:11%;width:540px;height:560px;transform:translateX(-50%);border-radius:50%;border:1px solid rgba(0,217,255,.07);opacity:.7;}
+.video-glow{position:absolute;left:50%;top:14%;width:470px;height:560px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(0,217,255,.24),rgba(0,105,160,.13) 42%,transparent 72%);filter:blur(18px);z-index:0}
+.video-photo-wrap{position:absolute;left:50%;top:9%;width:450px;height:585px;transform:translateX(-50%);z-index:4;display:flex;align-items:flex-start;justify-content:center}
+.video-photo-frame{position:relative;width:430px;height:575px;overflow:hidden;background:linear-gradient(180deg,rgba(0,217,255,.05),rgba(1,8,18,.88));mask-image:linear-gradient(to bottom,black 0 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,black 0 80%,transparent 100%)}
+.video-photo-frame:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 54%,#010812 94%);z-index:2;pointer-events:none}
+.video-photo-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,217,255,.12),transparent 28%,transparent 72%,rgba(0,217,255,.10));mix-blend-mode:screen;z-index:3;pointer-events:none}
+.video-profile{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:grayscale(1) contrast(1.08) brightness(.92);opacity:.94}
+.video-photo-halo{position:absolute;width:420px;height:520px;top:28px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,217,255,.17),transparent 68%);filter:blur(5px);z-index:-1}
+.video-corner{position:absolute;width:36px;height:36px;border-color:var(--cyan);z-index:8;box-shadow:0 0 12px rgba(0,217,255,.14)}
+.vc-tl{left:25%;top:5%;border-left:3px solid;border-top:3px solid}.vc-tr{right:25%;top:5%;border-right:3px solid;border-top:3px solid}.vc-bl{left:27%;bottom:12%;border-left:3px solid;border-bottom:3px solid}.vc-br{right:27%;bottom:12%;border-right:3px solid;border-bottom:3px solid}
+.video-badge{position:absolute;z-index:10;min-width:190px;background:rgba(2,10,19,.93);border:1px solid rgba(0,217,255,.30);border-radius:6px;padding:12px 15px;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 18px rgba(0,217,255,.06);font-family:"Space Mono",monospace;color:#d7e4ea;line-height:1.2;animation:videoBadgeFloat 6s ease-in-out infinite}
+.video-badge:after{content:"";position:absolute;inset:0;border-radius:6px;box-shadow:inset 0 0 18px rgba(0,217,255,.035);pointer-events:none}
+.video-badge .badge-label{display:block;color:#56dfff;font-size:.62rem;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:7px}.video-badge strong{display:block;font-size:.9rem;color:#e7f3f7}.video-badge strong:first-letter{color:var(--cyan)}.video-badge em{font-style:normal;color:#879ba7;font-size:.8rem}.badge-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#19e6bf;box-shadow:0 0 12px #19e6bf;margin-right:8px;vertical-align:middle}.badge-icon{color:var(--cyan);font-size:1rem;margin-right:8px}
+.vb1{left:12%;top:14%;}.vb2{right:9%;top:20%;min-width:220px}.vb3{left:13%;top:43%;}.vb4{right:10%;top:48%;min-width:205px}.vb5{left:11%;bottom:22%;min-width:235px}.vb6{right:8%;bottom:20%;}.vb7{left:17%;bottom:10%;min-width:205px}
+.video-statement{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);width:min(650px,72%);padding:14px 28px;text-align:center;background:rgba(2,10,19,.88);border:1px solid rgba(0,217,255,.20);font:700 .82rem/1.55 "Space Mono",monospace;color:#45dcff;z-index:12;clip-path:polygon(0 0,96% 0,100% 16%,100% 84%,96% 100%,4% 100%,0 84%,0 16%);box-shadow:0 0 25px rgba(0,217,255,.06)}
+.video-statement strong{font-weight:700;color:#49dfff}
+@keyframes videoBadgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:900px){.video-hero{min-height:820px}.video-stage{height:730px}.video-photo-wrap{width:400px;height:560px}.video-photo-frame{width:390px;height:550px}.vb1{left:2%;top:13%}.vb2{right:1%;top:20%}.vb3{left:1%;top:42%}.vb4{right:0;top:48%}.vb5{left:1%;bottom:23%}.vb6{right:0;bottom:19%}.vb7{left:6%;bottom:10%}.video-badge{min-width:160px;padding:10px 12px}.video-badge strong{font-size:.78rem}.video-badge .badge-label{font-size:.54rem}}
+@media(max-width:650px){.video-hero{min-height:760px;padding-top:88px}.video-stage{height:660px}.video-photo-wrap{top:8%;width:310px;height:470px}.video-photo-frame{width:305px;height:460px}.video-stage:before{width:360px;height:480px}.video-stage:after{width:330px;height:440px}.video-corner{width:25px;height:25px}.vc-tl{left:17%}.vc-tr{right:17%}.vc-bl{left:20%}.vc-br{right:20%}.video-badge{min-width:0;width:auto;padding:8px 9px}.video-badge .badge-label{font-size:.46rem;margin-bottom:4px}.video-badge strong{font-size:.63rem}.video-badge em{font-size:.58rem}.vb1{left:0;top:10%}.vb2{right:0;top:16%}.vb3{left:0;top:39%}.vb4{right:0;top:44%}.vb5{left:0;bottom:25%}.vb6{right:0;bottom:22%}.vb7{left:4%;bottom:13%}.video-statement{width:88%;font-size:.61rem;padding:10px 14px;bottom:2%}}
+@media(prefers-reduced-motion:reduce){.video-badge{animation:none}}
 </style>
 </head>
 
@@ -206,34 +237,32 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 </nav>
 
 <main id="home">
-  <section class="hero" style="border-top:0">
-    <div class="hero-copy">
-      <div class="kicker">Monitoring | Evaluation | Knowledge Management</div>
-      <h1>Hi, I'm <span>Alla Ud Din</span></h1>
-      <h2>Monitoring, Evaluation & Knowledge Management Specialist</h2>
-      <p>With <strong>14+ years</strong> of experience across the UN and international development sector, I design and use evidence, data and knowledge to drive measurable impact for gender equality, inclusive development and resilient communities.</p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="#highlights"><i data-lucide="arrow-down-right" size="17"></i> View My Work</a>
-        <a class="btn btn-secondary" href="Alla_Ud_Din_CV.pdf" download><i data-lucide="download" size="17"></i> Download CV</a>
-        <a class="btn btn-secondary" href="mailto:allauddin.leo82@gmail.com"><i data-lucide="mail" size="17"></i> Email Me</a>
-      </div>
-      <div class="hero-tagline">Turning Evidence<br>into Measurable Impact</div>
-    </div>
-    <div class="hero-visual">
-      <div class="photo-orbit">
-        <span class="orbit-corner tl"></span><span class="orbit-corner tr"></span><span class="orbit-corner bl"></span><span class="orbit-corner br"></span>
-        <div class="photo-core"><img class="profile" src="profile.jpg" alt="Alla Ud Din"></div>
-        <div class="orbit-ring">
-          <div class="orbit-badge b1">WORK EXPERIENCE<strong>14+ Years</strong></div>
-          <div class="orbit-badge b2">EVIDENCE<strong>for Impact</strong></div>
-          <div class="orbit-badge b3">DATA<strong>Data-Driven Solutions</strong></div>
-          <div class="orbit-badge b4">EQUITY<strong>Gender Equality & Inclusion</strong></div>
-          <div class="orbit-badge b5">KNOWLEDGE<strong>Knowledge Management</strong></div>
-          <div class="orbit-badge b6">IMPACT<strong>Stronger Communities</strong></div>
+  <section class="hero video-hero" style="border-top:0">
+    <div class="video-hero-bg"></div>
+    <div class="video-stage">
+      <div class="video-corner vc-tl"></div><div class="video-corner vc-tr"></div>
+      <div class="video-corner vc-bl"></div><div class="video-corner vc-br"></div>
+      <div class="video-glow"></div>
+
+      <div class="video-badge vb1"><span class="badge-label">WORK EXPERIENCE</span><strong>14+ <em>Years</em></strong></div>
+      <div class="video-badge vb2"><span class="badge-dot"></span><span class="badge-label">ACTIVE PRACTICE</span><strong>UN Women <em>Specialist</em></strong></div>
+      <div class="video-badge vb3"><span class="badge-icon">▣</span><strong>RBM Expert</strong></div>
+      <div class="video-badge vb4"><span class="badge-icon">⌁</span><strong>Impact &amp; Learning</strong></div>
+      <div class="video-badge vb5"><span class="badge-icon">▱</span><strong>Knowledge Management</strong></div>
+      <div class="video-badge vb6"><span class="badge-icon">◌</span><strong>Data &amp; Evidence</strong></div>
+      <div class="video-badge vb7"><span class="badge-icon">↗</span><strong>Strategic Planning</strong></div>
+
+      <div class="video-photo-wrap">
+        <div class="video-photo-halo"></div>
+        <div class="video-photo-frame">
+          <img src="profile.jpg" class="video-profile" alt="Alla Ud Din — Monitoring, Evaluation & Knowledge Management Specialist">
         </div>
-        <div class="orbit-dot"></div>
       </div>
-      <div class="quote">“Turning Evidence<br>into Measurable Impact”</div>
+
+      <div class="video-statement">
+        <span>Turning evidence, data and knowledge into</span><br>
+        <strong>measurable results for gender equality and inclusive development</strong>
+      </div>
     </div>
   </section>
   <div class="partner-strip experience-strip">
