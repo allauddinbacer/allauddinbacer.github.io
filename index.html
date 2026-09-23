@@ -210,6 +210,47 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 @media(max-width:900px){.video-hero{min-height:820px}.video-stage{height:730px}.video-photo-wrap{width:400px;height:560px}.video-photo-frame{width:390px;height:550px}.vb1{left:2%;top:13%}.vb2{right:1%;top:20%}.vb3{left:1%;top:42%}.vb4{right:0;top:48%}.vb5{left:1%;bottom:23%}.vb6{right:0;bottom:19%}.vb7{left:6%;bottom:10%}.video-badge{min-width:160px;padding:10px 12px}.video-badge strong{font-size:.78rem}.video-badge .badge-label{font-size:.54rem}}
 @media(max-width:650px){.video-hero{min-height:760px;padding-top:88px}.video-stage{height:660px}.video-photo-wrap{top:8%;width:310px;height:470px}.video-photo-frame{width:305px;height:460px}.video-stage:before{width:360px;height:480px}.video-stage:after{width:330px;height:440px}.video-corner{width:25px;height:25px}.vc-tl{left:17%}.vc-tr{right:17%}.vc-bl{left:20%}.vc-br{right:20%}.video-badge{min-width:0;width:auto;padding:8px 9px}.video-badge .badge-label{font-size:.46rem;margin-bottom:4px}.video-badge strong{font-size:.63rem}.video-badge em{font-size:.58rem}.vb1{left:0;top:10%}.vb2{right:0;top:16%}.vb3{left:0;top:39%}.vb4{right:0;top:44%}.vb5{left:0;bottom:25%}.vb6{right:0;bottom:22%}.vb7{left:4%;bottom:13%}.video-statement{width:88%;font-size:.61rem;padding:10px 14px;bottom:2%}}
 @media(prefers-reduced-motion:reduce){.video-badge{animation:none}}
+
+/* ===== Alla Ud Din — Futuristic HUD Visual Style ===== */
+.video-hero{min-height:900px;padding:92px 0 30px;background:#020c14}
+.video-hero-bg{background:radial-gradient(circle at 50% 44%,rgba(0,229,255,.16),transparent 22%),radial-gradient(circle at 50% 50%,rgba(0,120,170,.12),transparent 44%),linear-gradient(rgba(0,229,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.035) 1px,transparent 1px);background-size:auto,auto,32px 32px,32px 32px}
+.video-stage{width:min(1180px,96%);height:790px}
+.video-intro{position:absolute;left:3%;top:17%;width:310px;z-index:11;font-family:"Space Mono",monospace;text-align:left}
+.video-intro .intro-kicker{font-size:.66rem;letter-spacing:2px;color:#8ca6b1;text-transform:uppercase;border-left:2px solid var(--cyan);padding-left:10px;margin-bottom:14px}
+.video-intro h1{font-size:clamp(2.5rem,4vw,4.1rem);line-height:.95;letter-spacing:-2px;margin:0 0 14px;color:#f0f8fb}
+.video-intro h1 span{color:#00e5ff}
+.video-intro .intro-role{font-size:1rem;line-height:1.45;color:#d7e5ea;margin:0 0 15px}
+.video-intro .intro-role strong{color:#00e5ff}
+.video-intro .intro-line{height:1px;width:180px;background:linear-gradient(90deg,#00e5ff,transparent);margin:14px 0}
+.video-intro .intro-copy{font:400 .73rem/1.7 "Space Mono",monospace;color:#9db0ba;margin:0}
+.video-intro .intro-copy strong{color:#00e5ff}
+@media(max-width:1100px){.video-intro{left:1%;width:265px}.video-intro h1{font-size:2.7rem}.video-intro .intro-role{font-size:.88rem}.video-intro .intro-copy{font-size:.64rem}}
+@media(max-width:900px){.video-intro{position:absolute;left:50%;transform:translateX(-50%);top:1%;width:90%;text-align:center}.video-intro .intro-kicker{display:inline-block}.video-intro h1{font-size:2.5rem}.video-intro .intro-line{margin:12px auto}.video-intro .intro-copy{display:none}}
+
+.video-stage:before{width:650px;height:650px;top:7%;border-color:rgba(0,229,255,.13);box-shadow:0 0 100px rgba(0,229,255,.07) inset}
+.video-stage:after{width:575px;height:575px;top:11%;border-color:rgba(0,229,255,.10)}
+.video-glow{top:12%;width:520px;height:590px;background:radial-gradient(ellipse,rgba(0,229,255,.20),rgba(0,105,160,.10) 45%,transparent 72%)}
+.video-photo-wrap{top:8%;width:470px;height:610px}
+.video-photo-frame{width:420px;height:580px;background:transparent;mask-image:none;-webkit-mask-image:none;border:0;overflow:hidden}
+.video-photo-frame:before,.video-photo-frame:after{display:none}
+.video-profile{filter:none;opacity:1;object-fit:cover;object-position:center 18%;border-radius:0}
+.video-photo-halo{width:440px;height:560px;top:15px;background:radial-gradient(ellipse,rgba(0,229,255,.20),transparent 68%)}
+.video-corner{width:42px;height:42px;border-width:0!important;box-shadow:none}
+.vc-tl{left:25%;top:4%;border-left:2px solid var(--cyan)!important;border-top:2px solid var(--cyan)!important}
+.vc-tr{right:25%;top:4%;border-right:2px solid var(--cyan)!important;border-top:2px solid var(--cyan)!important}
+.vc-bl{left:26%;bottom:9%;border-left:2px solid var(--cyan)!important;border-bottom:2px solid var(--cyan)!important}
+.vc-br{right:26%;bottom:9%;border-right:2px solid var(--cyan)!important;border-bottom:2px solid var(--cyan)!important}
+.video-badge{min-width:220px;padding:13px 16px;background:rgba(2,15,23,.91);border:1px solid rgba(0,229,255,.38);border-radius:4px;box-shadow:0 0 24px rgba(0,229,255,.08);font-family:"Space Mono",monospace}
+.video-badge .badge-label{font-size:.60rem;color:#8ca6b1;letter-spacing:1.8px;margin-bottom:6px}
+.video-badge strong{font-size:1rem;color:#00e5ff;letter-spacing:.2px}
+.video-badge em{color:#d7e5ea;font-size:.82rem}
+.video-badge:before{content:"";position:absolute;top:-1px;left:-1px;width:9px;height:9px;border-top:2px solid var(--cyan);border-left:2px solid var(--cyan)}
+.vb1{left:8%;top:12%}.vb2{right:6%;top:17%;min-width:245px}.vb3{left:8%;top:39%}.vb4{right:7%;top:43%;min-width:220px}.vb5{left:6%;bottom:20%;min-width:255px}.vb6{right:6%;bottom:19%;min-width:220px}.vb7{left:15%;bottom:7%;min-width:225px}
+.video-statement{bottom:0;width:min(720px,72%);padding:16px 30px;background:rgba(2,13,21,.92);border:1px solid rgba(0,229,255,.34);font:700 .76rem/1.55 "Space Mono",monospace;letter-spacing:.4px;box-shadow:0 0 30px rgba(0,229,255,.08)}
+.video-statement strong{color:#00e5ff}
+@media(max-width:900px){.video-hero{min-height:820px}.video-stage{height:730px}.video-photo-wrap{width:400px;height:560px}.video-photo-frame{width:390px;height:550px}.video-badge{min-width:160px}.vb1{left:2%}.vb2{right:1%}.vb3{left:1%}.vb4{right:0}.vb5{left:1%}.vb6{right:0}.vb7{left:6%}}
+@media(max-width:650px){.video-hero{min-height:760px}.video-stage{height:660px}.video-photo-wrap{top:8%;width:310px;height:470px}.video-photo-frame{width:305px;height:460px}.video-badge{min-width:0;width:auto;padding:8px 9px}.video-badge .badge-label{font-size:.46rem}.video-badge strong{font-size:.63rem}.vb1{left:0}.vb2{right:0}.vb3{left:0}.vb4{right:0}.vb5{left:0}.vb6{right:0}.vb7{left:4%}}
+
 </style>
 </head>
 
@@ -243,6 +284,14 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
       <div class="video-corner vc-tl"></div><div class="video-corner vc-tr"></div>
       <div class="video-corner vc-bl"></div><div class="video-corner vc-br"></div>
       <div class="video-glow"></div>
+
+      <div class="video-intro">
+        <div class="intro-kicker">MONITORING | EVALUATION | KNOWLEDGE MANAGEMENT</div>
+        <h1>Hi, I’m <span>Alla Ud Din</span></h1>
+        <p class="intro-role">Monitoring, Evaluation &amp; <strong>Knowledge Management Specialist</strong></p>
+        <div class="intro-line"></div>
+        <p class="intro-copy">With <strong>14+ years</strong> across the UN and international development sector, I use evidence, data and knowledge to support measurable results for gender equality, inclusive development and resilient communities.</p>
+      </div>
 
       <div class="video-badge vb1"><span class="badge-label">WORK EXPERIENCE</span><strong>14+ <em>Years</em></strong></div>
       <div class="video-badge vb2"><span class="badge-dot"></span><span class="badge-label">ACTIVE PRACTICE</span><strong>UN Women <em>Specialist</em></strong></div>
