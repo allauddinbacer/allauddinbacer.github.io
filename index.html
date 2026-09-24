@@ -998,18 +998,286 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
     left: 1.5% !important;
   }
 }
+</style>
+
+
 <style>
-/* ===== Mobile spacing fix: reduce the gap between intro/buttons and portrait ===== */
-@media (max-width:650px){
-  .video-hero{min-height:900px !important;padding-top:82px !important;}
-  .video-stage{height:820px !important;}
-  .video-photo-wrap{top:39% !important;}
-  .video-stage:before{top:37% !important;}
-  .video-stage:after{top:41% !important;}
-  .video-glow{top:39% !important;}
+/* ===== RBM + Knowledge Management badges: move closer to portrait ===== */
+@media (min-width: 1101px){
+  .video-stage .vb3{
+    left: 56% !important;
+    top: 25% !important;
+  }
+
+  .video-stage .vb5{
+    left: 56% !important;
+    bottom: 22% !important;
+  }
+
+  /* Keep the HUD look, but make these two boxes lighter/transparent */
+  .video-stage .vb3,
+  .video-stage .vb5{
+    background: rgba(3,15,24,.62) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb3{
+    left: 55% !important;
+    top: 29% !important;
+  }
+
+  .video-stage .vb5{
+    left: 55% !important;
+    bottom: 23% !important;
+  }
 }
 </style>
 
+
+<style>
+/* ===== Keep RBM + Knowledge Management outside the portrait, touching its left edge ===== */
+@media (min-width: 1101px){
+  .video-stage .vb3{
+    left: 41% !important;
+    top: 25% !important;
+  }
+
+  .video-stage .vb5{
+    left: 41% !important;
+    bottom: 22% !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb3{
+    left: 42% !important;
+    top: 29% !important;
+  }
+
+  .video-stage .vb5{
+    left: 42% !important;
+    bottom: 23% !important;
+  }
+}
+</style>
+
+
+<style>
+/* ===== Subtle badge adjustment — keep the original layout, only nudge badges ===== */
+@media (min-width: 1101px){
+  /* RBM Expert + Knowledge Management: just outside/touching the portrait */
+  .video-stage .vb3{
+    left: 44% !important;
+    top: 25% !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb5{
+    left: 44% !important;
+    bottom: 22% !important;
+    transform: scale(.94);
+  }
+
+  /* UN Women Specialist + Impact & Learning: move slightly farther out */
+  .video-stage .vb4{
+    right: -1% !important;
+    top: 42% !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb2{
+    right: -1% !important;
+    top: 8% !important;
+    transform: scale(.94);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb3{
+    left: 44% !important;
+    top: 29% !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb5{
+    left: 44% !important;
+    bottom: 23% !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb4{
+    right: -1% !important;
+    top: 42% !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb2{
+    right: -1% !important;
+    top: 9% !important;
+    transform: scale(.94);
+  }
+}
+</style>
+
+
+<style>
+/* ===== Final subtle badge positioning based on the supplied screenshot ===== */
+@media (min-width: 1101px){
+  /* Knowledge Management: slightly up and closer to the portrait, but still outside */
+  .video-stage .vb5{
+    left: 46% !important;
+    bottom: 27% !important;
+    transform: scale(.94);
+  }
+
+  /* Strategic Planning: centered at the bottom */
+  .video-stage .vb7{
+    left: 62% !important;
+    bottom: 3% !important;
+    transform: translateX(-50%) scale(.94);
+  }
+
+  /* Data & Evidence: slightly higher */
+  .video-stage .vb6{
+    right: -1% !important;
+    bottom: 27% !important;
+    transform: scale(.94);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb5{
+    left: 46% !important;
+    bottom: 27% !important;
+    transform: scale(.94);
+  }
+
+  .video-stage .vb7{
+    left: 62% !important;
+    bottom: 4% !important;
+    transform: translateX(-50%) scale(.94);
+  }
+
+  .video-stage .vb6{
+    right: -1% !important;
+    bottom: 27% !important;
+    transform: scale(.94);
+  }
+}
+</style>
+
+
+<style>
+/* ===== Second subtle adjustment ===== */
+@media (min-width: 1101px){
+  /* Knowledge Management: a little higher and closer to portrait */
+  .video-stage .vb5{
+    left: 47% !important;
+    bottom: 30% !important;
+    transform: scale(.94);
+  }
+
+  /* Strategic Planning: slightly further into the bottom-center position */
+  .video-stage .vb7{
+    left: 63% !important;
+    bottom: 4% !important;
+    transform: translateX(-50%) scale(.94);
+  }
+
+  /* Data & Evidence: slightly higher */
+  .video-stage .vb6{
+    right: -1% !important;
+    bottom: 30% !important;
+    transform: scale(.94);
+  }
+
+  /* Impact & Learning: slightly higher */
+  .video-stage .vb4{
+    right: -1% !important;
+    top: 38% !important;
+    transform: scale(.94);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb5{
+    left: 47% !important;
+    bottom: 30% !important;
+    transform: scale(.94);
+  }
+
+  .video-stage .vb7{
+    left: 63% !important;
+    bottom: 5% !important;
+    transform: translateX(-50%) scale(.94);
+  }
+
+  .video-stage .vb6{
+    right: -1% !important;
+    bottom: 30% !important;
+    transform: scale(.94);
+  }
+
+  .video-stage .vb4{
+    right: -1% !important;
+    top: 38% !important;
+    transform: scale(.94);
+  }
+}
+</style>
+
+
+<style>
+/* ===== Fine adjustment: RBM closer, Knowledge Management slightly away ===== */
+@media (min-width: 1101px){
+  .video-stage .vb3{
+    left: 45% !important;
+    top: 25% !important;
+    transform: scale(.94);
+  }
+
+  .video-stage .vb5{
+    left: 49% !important;
+    bottom: 30% !important;
+    transform: scale(.94);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb3{
+    left: 45% !important;
+    top: 29% !important;
+    transform: scale(.94);
+  }
+
+  .video-stage .vb5{
+    left: 49% !important;
+    bottom: 30% !important;
+    transform: scale(.94);
+  }
+}
+</style>
+
+
+
+
+<style>
+/* ===== Mobile: reduce vertical gap between intro buttons and profile picture ===== */
+@media (max-width: 650px){
+  .video-photo-wrap{
+    top: 40% !important;
+  }
+
+  .video-stage:before{
+    top: 38% !important;
+  }
+
+  .video-stage:after{
+    top: 42% !important;
+  }
+
+  .video-glow{
+    top: 39% !important;
+  }
+}
 </style>
 
 </head>
@@ -1388,6 +1656,38 @@ if(mobileMenuToggle && navLinks){
 }
 </style>
 </body>
+
+<style>
+/* ===== RBM Expert + Knowledge Management: separate boxes ===== */
+@media (min-width: 1101px){
+  .video-stage .vb3{
+    left: 45% !important;
+    top: 25% !important;
+    bottom: auto !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb5{
+    left: 49% !important;
+    bottom: 30% !important;
+    top: auto !important;
+    transform: scale(.94);
+  }
+}
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb3{
+    left: 45% !important;
+    top: 29% !important;
+    bottom: auto !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb5{
+    left: 49% !important;
+    bottom: 30% !important;
+    top: auto !important;
+    transform: scale(.94);
+  }
+}
+</style>
 </html>
 <style>
 /* ===== Image 2 final hero composition ===== */
@@ -1443,3 +1743,15 @@ if(mobileMenuToggle && navLinks){
 </style>
 
 
+
+<style>
+/* ===== RBM Expert + Knowledge Management: restore the earlier separated positions ===== */
+@media (min-width:1101px){
+  .video-stage .vb3{left:44% !important;top:25% !important;bottom:auto !important;transform:scale(.94) !important;}
+  .video-stage .vb5{left:44% !important;bottom:22% !important;top:auto !important;transform:scale(.94) !important;}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .video-stage .vb3{left:44% !important;top:29% !important;bottom:auto !important;transform:scale(.94) !important;}
+  .video-stage .vb5{left:44% !important;bottom:22% !important;top:auto !important;transform:scale(.94) !important;}
+}
+</style>
