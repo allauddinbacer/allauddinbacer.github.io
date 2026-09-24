@@ -1257,59 +1257,25 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 </style>
 
 
-<style>
-/* ===== RBM Expert + Knowledge Management: identical vertical level ===== */
-@media (min-width: 1101px){
-  .video-stage .vb3{
-    left: 45% !important;
-    top: 28% !important;
-    bottom: auto !important;
-    transform: scale(.94);
-  }
-
-  .video-stage .vb5{
-    left: 49% !important;
-    top: 28% !important;
-    bottom: auto !important;
-    transform: scale(.94);
-  }
-}
-
-@media (min-width: 901px) and (max-width: 1100px){
-  .video-stage .vb3{
-    left: 45% !important;
-    top: 31% !important;
-    bottom: auto !important;
-    transform: scale(.94);
-  }
-
-  .video-stage .vb5{
-    left: 49% !important;
-    top: 31% !important;
-    bottom: auto !important;
-    transform: scale(.94);
-  }
-}
-</style>
 
 
 <style>
 /* ===== Mobile: reduce vertical gap between intro buttons and profile picture ===== */
 @media (max-width: 650px){
   .video-photo-wrap{
-    top: 29% !important;
+    top: 40% !important;
   }
 
   .video-stage:before{
-    top: 27% !important;
+    top: 38% !important;
   }
 
   .video-stage:after{
-    top: 31% !important;
+    top: 42% !important;
   }
 
   .video-glow{
-    top: 28% !important;
+    top: 39% !important;
   }
 }
 </style>
@@ -1690,6 +1656,38 @@ if(mobileMenuToggle && navLinks){
 }
 </style>
 </body>
+
+<style>
+/* ===== RBM Expert + Knowledge Management: separate boxes ===== */
+@media (min-width: 1101px){
+  .video-stage .vb3{
+    left: 45% !important;
+    top: 25% !important;
+    bottom: auto !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb5{
+    left: 49% !important;
+    bottom: 30% !important;
+    top: auto !important;
+    transform: scale(.94);
+  }
+}
+@media (min-width: 901px) and (max-width: 1100px){
+  .video-stage .vb3{
+    left: 45% !important;
+    top: 29% !important;
+    bottom: auto !important;
+    transform: scale(.94);
+  }
+  .video-stage .vb5{
+    left: 49% !important;
+    bottom: 30% !important;
+    top: auto !important;
+    transform: scale(.94);
+  }
+}
+</style>
 </html>
 <style>
 /* ===== Image 2 final hero composition ===== */
@@ -1745,3 +1743,15 @@ if(mobileMenuToggle && navLinks){
 </style>
 
 
+
+<style>
+/* ===== RBM Expert + Knowledge Management: restore the earlier separated positions ===== */
+@media (min-width:1101px){
+  .video-stage .vb3{left:44% !important;top:25% !important;bottom:auto !important;transform:scale(.94) !important;}
+  .video-stage .vb5{left:44% !important;bottom:22% !important;top:auto !important;transform:scale(.94) !important;}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .video-stage .vb3{left:44% !important;top:29% !important;bottom:auto !important;transform:scale(.94) !important;}
+  .video-stage .vb5{left:44% !important;bottom:22% !important;top:auto !important;transform:scale(.94) !important;}
+}
+</style>
