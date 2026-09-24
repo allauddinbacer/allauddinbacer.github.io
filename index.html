@@ -819,6 +819,151 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 }
 </style>
 
+
+<style>
+/* ===== Final adjustment: remove the visible gap around the portrait ===== */
+@media (min-width:1101px){
+  .video-hero{
+    min-height:790px;
+    padding:72px 0 0;
+  }
+  .video-stage{
+    height:718px;
+  }
+
+  /* Make the portrait run almost to the bottom of the hero,
+     as in the reference template. */
+  .video-photo-wrap{
+    top:0;
+    height:718px;
+    width:520px;
+  }
+  .video-photo-frame{
+    width:500px;
+    height:718px;
+  }
+  .video-profile{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 15%;
+  }
+  .video-photo-halo{
+    width:520px;
+    height:710px;
+    top:4px;
+  }
+
+  /* Keep the portrait visual centered vertically while extending down */
+  .video-stage:before{
+    top:0;
+    height:680px;
+  }
+  .video-stage:after{
+    top:8%;
+    height:570px;
+  }
+  .video-glow{
+    top:3%;
+    height:700px;
+  }
+
+  /* The statement sits over the bottom edge instead of leaving a gap. */
+  .video-statement{
+    bottom:-2px;
+    z-index:30;
+  }
+
+  .vc-bl,.vc-br{
+    bottom:3%;
+  }
+}
+
+@media (min-width:651px) and (max-width:1100px){
+  .video-photo-wrap{
+    top:0;
+    height:620px;
+  }
+  .video-photo-frame{
+    height:610px;
+  }
+  .video-statement{
+    bottom:0;
+  }
+}
+
+@media (max-width:650px){
+  /* Keep the mobile version compact; no artificial blank area below the photo. */
+  .video-stage{
+    height:900px;
+  }
+  .video-photo-wrap{
+    top:43%;
+    height:430px;
+  }
+  .video-photo-frame{
+    height:420px;
+  }
+  .video-statement{
+    bottom:0;
+  }
+}
+</style>
+
+
+<style>
+/* ===== Final adjustment: move hero buttons to the bottom like the reference ===== */
+@media (min-width:1101px){
+  .video-intro{
+    top:10%;
+    height:86%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .video-intro .intro-kicker,
+  .video-intro h1,
+  .video-intro .intro-role,
+  .video-intro .intro-line,
+  .video-intro .intro-copy{
+    flex-shrink:0;
+  }
+
+  .video-intro-actions{
+    margin-top:auto;
+    width:100%;
+    padding-bottom:0;
+  }
+}
+
+@media (min-width:651px) and (max-width:1100px){
+  .video-intro{
+    top:9%;
+    height:84%;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .video-intro-actions{
+    margin-top:auto;
+  }
+}
+
+/* Keep the mobile layout natural — no artificial empty space */
+@media (max-width:650px){
+  .video-intro{
+    height:auto;
+    display:block;
+  }
+
+  .video-intro-actions{
+    margin-top:20px;
+  }
+}
+</style>
+
 </head>
 
 <body>
