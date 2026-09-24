@@ -450,11 +450,76 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 }
 </style>
 
+
+<style>
+/* ===== Mobile navigation + responsive refinements ===== */
+.mobile-menu-toggle{display:none;background:transparent;border:1px solid rgba(0,217,255,.35);color:var(--cyan);border-radius:5px;width:44px;height:44px;font-size:1.35rem;cursor:pointer;align-items:center;justify-content:center;position:relative;z-index:1102}
+.mobile-nav-overlay{display:none}
+@media(max-width:900px){
+  nav{height:auto;min-height:68px}
+  .nav-inner{height:68px}
+  .logo{font-size:1rem}
+  .mobile-menu-toggle{display:flex}
+  .nav-links{position:absolute;top:68px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:rgba(2,11,19,.98);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,217,255,.18);padding:10px 5%;box-shadow:0 18px 35px rgba(0,0,0,.35);max-height:calc(100vh - 68px);overflow-y:auto}
+  .nav-links.mobile-open{display:flex}
+  .nav-links li{width:100%;list-style:none}
+  .nav-links a{display:block;padding:12px 8px;font-size:.82rem;border-bottom:1px solid rgba(141,162,178,.08)}
+  .nav-links .nav-cv{margin:10px 0 4px;text-align:center;border:1px solid var(--cyan);border-radius:5px;padding:11px}
+  body.menu-open{overflow:hidden}
+  .video-hero{min-height:980px;padding-top:92px}
+  .video-stage{height:900px;width:92%;overflow:visible}
+  .video-intro{top:0;width:100%;max-width:620px;text-align:center}
+  .video-intro .intro-kicker{display:inline-block;font-size:.56rem;letter-spacing:1.3px;margin-bottom:16px}
+  .video-intro h1{font-size:3rem;line-height:.96;letter-spacing:-2px;margin-bottom:18px;max-width:none}
+  .video-intro .intro-role{font-size:.95rem;line-height:1.35;padding-left:12px;text-align:left;margin:0 auto 18px;max-width:430px}
+  .video-intro .intro-copy{font-size:.74rem;line-height:1.55;max-width:500px;margin:0 auto 20px}
+  .video-intro-actions{justify-content:center;gap:8px}
+  .intro-btn{min-height:44px;padding:0 14px;font-size:.72rem}
+  .intro-icon-btn{width:44px;padding:0}
+  .video-photo-wrap{left:50%;top:43%;width:310px;height:420px}
+  .video-photo-frame{width:300px;height:405px}
+  .video-photo-halo{width:330px;height:420px}
+  .video-stage:before{left:50%;top:41%;width:350px;height:430px}
+  .video-stage:after{left:50%;top:45%;width:310px;height:370px}
+  .video-glow{left:50%;top:43%;width:340px;height:430px}
+  .video-badge{display:none}
+  .video-statement{left:50%;bottom:1%;width:92%;font-size:.57rem;padding:10px 13px;line-height:1.45}
+  .video-corner{width:25px;height:25px}
+  .vc-tl{left:24%;top:40%}.vc-tr{right:24%;top:40%}.vc-bl{left:24%;bottom:9%}.vc-br{right:24%;bottom:9%}
+  .experience-strip{padding:14px 0 18px}
+  .experience-label{font-size:.58rem;text-align:center;letter-spacing:.16em}
+  .org-logo{min-width:155px;padding:4px 16px}.org-logo b{font-size:.72rem}.org-logo small{font-size:.55rem}
+  .partner-row{gap:12px}.partner-row span{font-size:.78rem}.partner-row span+span{padding-left:14px}
+  .cards{grid-template-columns:1fr 1fr;gap:12px}.card{padding:18px}
+  .section-title{font-size:2.2rem}.section-subtitle{font-size:.84rem;padding:0 8px}
+  .contact{grid-template-columns:1fr}.contact-box{padding:24px}.contact-box h3{font-size:1.45rem}
+  .footer-row{font-size:.68rem}
+}
+@media(max-width:560px){
+  .container{width:92%}.logo{font-size:.92rem}
+  .video-hero{min-height:900px;padding-top:86px}
+  .video-stage{height:820px}
+  .video-intro h1{font-size:2.65rem}
+  .video-intro .intro-role{font-size:.86rem;max-width:330px}
+  .video-intro .intro-copy{font-size:.70rem;max-width:350px}
+  .video-intro-actions .intro-btn-primary{padding:0 13px}
+  .video-photo-wrap{top:46%;width:275px;height:380px}.video-photo-frame{width:265px;height:365px}.video-photo-halo{width:290px;height:390px}
+  .video-stage:before{top:44%;width:315px;height:390px}.video-stage:after{top:48%;width:275px;height:335px}.video-glow{top:46%;width:300px;height:390px}
+  .video-statement{width:96%;font-size:.52rem;padding:9px 10px}
+  .vc-tl{left:21%;top:43%}.vc-tr{right:21%;top:43%}.vc-bl{left:21%;bottom:9%}.vc-br{right:21%;bottom:9%}
+  .cards{grid-template-columns:1fr}.card{min-height:140px}
+  .section-title{font-size:1.9rem}.section-subtitle{font-size:.78rem}
+  .journey-grid{grid-template-columns:1fr}.journey-card{min-height:110px}
+  .contact-links{flex-direction:column}.contact-links .btn{width:100%;justify-content:center}
+  .footer-row{gap:8px}
+}
+</style>
 </head>
 
 <body>
 <nav>
   <div class="container nav-inner">
+<button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
     <a class="logo" href="#home">
       <div class="logo-mark"><i data-lucide="home" size="20"></i></div>
       <div>Alla Ud <span>Din</span></div>
@@ -783,6 +848,28 @@ function closeLightbox(){
 document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
 lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+</script>
+
+<script>
+const mobileMenuToggle=document.getElementById('mobileMenuToggle');
+const navLinks=document.querySelector('.nav-links');
+if(mobileMenuToggle && navLinks){
+  mobileMenuToggle.addEventListener('click',()=>{
+    const open=navLinks.classList.toggle('mobile-open');
+    mobileMenuToggle.setAttribute('aria-expanded',String(open));
+    mobileMenuToggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+    mobileMenuToggle.textContent=open?'×':'☰';
+    document.body.classList.toggle('menu-open',open);
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('mobile-open');
+    mobileMenuToggle.setAttribute('aria-expanded','false');
+    mobileMenuToggle.setAttribute('aria-label','Open navigation menu');
+    mobileMenuToggle.textContent='☰';
+    document.body.classList.remove('menu-open');
+  }));
+  window.addEventListener('resize',()=>{if(window.innerWidth>900){navLinks.classList.remove('mobile-open');mobileMenuToggle.textContent='☰';mobileMenuToggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}});
+}
 </script>
 </body>
 </html>
