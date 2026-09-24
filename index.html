@@ -964,6 +964,24 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 }
 </style>
 
+
+<style>
+/* ===== Final requested adjustment: buttons directly below intro copy ===== */
+@media (min-width: 901px){
+  .video-intro-actions{ margin-top:0; position:relative; top:-4px; }
+}
+</style>
+
+
+<style>
+/* ===== Final requested adjustment: move statement to the left side ===== */
+@media (min-width: 901px){
+  .video-statement{left:1.5%;bottom:2%;width:min(620px,45%);transform:none;text-align:left;padding:14px 20px;}
+}
+@media (max-width:900px){
+  .video-statement{left:50%;bottom:1%;width:82%;transform:translateX(-50%);text-align:center;}
+}
+</style>
 </head>
 
 <body>
@@ -1321,6 +1339,24 @@ if(mobileMenuToggle && navLinks){
   window.addEventListener('resize',()=>{if(window.innerWidth>900){navLinks.classList.remove('mobile-open');mobileMenuToggle.textContent='☰';mobileMenuToggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}});
 }
 </script>
+
+<style>
+/* FINAL: evidence statement aligned with Strategic Planning card */
+@media (min-width:1101px){
+  .video-statement{
+    left:0 !important; right:auto !important; bottom:7% !important;
+    width:560px !important; max-width:43% !important;
+    transform:none !important; text-align:left !important;
+  }
+}
+@media (min-width:901px) and (max-width:1100px){
+  .video-statement{
+    left:0 !important; right:auto !important; bottom:7% !important;
+    width:430px !important; max-width:45% !important;
+    transform:none !important; text-align:left !important;
+  }
+}
+</style>
 </body>
 </html>
 <style>
@@ -1375,3 +1411,5 @@ if(mobileMenuToggle && navLinks){
   .video-statement{left:70%;width:410px;bottom:0;}
 }
 </style>
+
+
