@@ -99,8 +99,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(1,9,16,.78)
 .org-logo b{font-size:.85rem;letter-spacing:.04em;color:#dce8ee}.org-logo small{font-size:.62rem;line-height:1.25;color:#8398a6}.org-logo.active{opacity:1}.org-logo.active b{color:var(--cyan);text-shadow:0 0 12px rgba(0,217,255,.35)}
 @keyframes logoSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .partner-strip{border-top:1px solid rgba(0,217,255,.28);border-bottom:1px solid rgba(0,217,255,.10);padding:18px 0;background:rgba(1,13,22,.72)}.partner-row{display:flex;justify-content:space-around;align-items:center;gap:25px;flex-wrap:wrap;color:#dce7ed;font-weight:700;letter-spacing:.5px}.partner-row span{opacity:.72;font-size:.95rem}.partner-row span+span{border-left:1px solid rgba(255,255,255,.2);padding-left:28px}
-section{padding:85px 0;border-top:1px solid rgba(0,217,255,.08)}
-.section-head{text-align:center;margin-bottom:42px}
+section{padding:55px 0;border-top:1px solid rgba(0,217,255,.08)}
+.section-head{text-align:center;margin-bottom:28px}
 .section-title{font-size:2.6rem;line-height:1.1;margin:10px 0}
 .section-title span{color:var(--cyan)}
 .section-subtitle{color:var(--muted);max-width:700px;margin:auto}
@@ -115,7 +115,7 @@ section{padding:85px 0;border-top:1px solid rgba(0,217,255,.08)}
 .credential{min-height:145px;display:flex;flex-direction:column;justify-content:space-between}
 .credential .year{font:700 .7rem "Space Mono",monospace;color:var(--cyan)}
 .credential .issuer{font-size:.75rem;color:var(--muted)}
-.journey{position:relative;padding:35px 0 20px}
+.journey{position:relative;padding:24px 0 12px}
 .journey-line{position:absolute;left:5%;right:5%;top:100px;height:2px;background:linear-gradient(90deg,var(--cyan),#7c3aed,var(--cyan))}
 .journey-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
 .journey-item{text-align:center}
@@ -438,6 +438,15 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
   .video-statement{width:92%;font-size:.56rem;bottom:1%;}
   .intro-btn{min-height:46px;padding:0 14px;font-size:.74rem;}
   .intro-icon-btn{width:46px;padding:0;}
+}
+/* ===== Compact section spacing ===== */
+@media(max-width:900px){
+  section{padding:48px 0;}
+  .section-head{margin-bottom:24px;}
+}
+@media(max-width:560px){
+  section{padding:42px 0;}
+  .section-head{margin-bottom:20px;}
 }
 </style>
 
