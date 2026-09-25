@@ -95,8 +95,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(1,9,16,.78)
 .experience-label{font:700 .68rem "Space Mono",monospace;letter-spacing:.24em;color:var(--cyan);margin-bottom:13px;text-align:left}
 .experience-track{display:flex;align-items:stretch;gap:0;width:max-content;animation:logoSlide 30s linear infinite}
 .experience-track:hover{animation-play-state:paused}
-.org-logo{min-width:190px;padding:5px 24px;border-right:1px solid rgba(141,162,178,.22);display:flex;flex-direction:column;justify-content:center;gap:2px;opacity:.78;transition:.25s}
-.org-logo b{font-size:.85rem;letter-spacing:.04em;color:#dce8ee}.org-logo small{font-size:.62rem;line-height:1.25;color:#8398a6}.org-logo.active{opacity:1}.org-logo.active b{color:var(--cyan);text-shadow:0 0 12px rgba(0,217,255,.35)}
+.org-logo{min-width:245px;margin-right:10px;padding:12px 18px;display:flex;flex-direction:row;align-items:center;gap:12px;opacity:.82;transition:.25s;background:rgba(7,23,34,.72);border:1px solid rgba(0,217,255,.13);border-radius:7px;box-shadow:0 6px 18px rgba(0,0,0,.18);white-space:normal}
+.org-logo:hover{opacity:1;transform:translateY(-2px);border-color:rgba(0,217,255,.38);background:rgba(8,28,40,.9);box-shadow:0 10px 24px rgba(0,0,0,.25),0 0 18px rgba(0,217,255,.06)}
+.org-logo b{display:block;font-size:.82rem;line-height:1.15;letter-spacing:.045em;color:#dce8ee;white-space:nowrap}.org-logo small{display:block;font-size:.59rem;line-height:1.3;color:#8398a6;margin-top:4px}.org-logo.active{opacity:1;border-color:rgba(0,217,255,.42);background:rgba(7,29,41,.9);box-shadow:0 0 22px rgba(0,217,255,.10)}.org-logo.active b{color:var(--cyan);text-shadow:0 0 12px rgba(0,217,255,.35)}
 @keyframes logoSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .partner-strip{border-top:1px solid rgba(0,217,255,.28);border-bottom:1px solid rgba(0,217,255,.10);padding:18px 0;background:rgba(1,13,22,.72)}.partner-row{display:flex;justify-content:space-around;align-items:center;gap:25px;flex-wrap:wrap;color:#dce7ed;font-weight:700;letter-spacing:.5px}.partner-row span{opacity:.72;font-size:.95rem}.partner-row span+span{border-left:1px solid rgba(255,255,255,.2);padding-left:28px}
 section{padding:55px 0;border-top:1px solid rgba(0,217,255,.08)}
@@ -488,7 +489,7 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
   .vc-tl{left:24%;top:40%}.vc-tr{right:24%;top:40%}.vc-bl{left:24%;bottom:9%}.vc-br{right:24%;bottom:9%}
   .experience-strip{padding:14px 0 18px}
   .experience-label{font-size:.58rem;text-align:center;letter-spacing:.16em}
-  .org-logo{min-width:155px;padding:4px 16px}.org-logo b{font-size:.72rem}.org-logo small{font-size:.55rem}
+  .org-logo{min-width:205px;margin-right:8px;padding:10px 13px;gap:9px;border-radius:6px}.org-logo b{font-size:.68rem}.org-logo small{font-size:.52rem;line-height:1.25;margin-top:3px}.org-logo .org-mark{flex:0 0 auto}
   .partner-row{gap:12px}.partner-row span{font-size:.78rem}.partner-row span+span{padding-left:14px}
   .cards{grid-template-columns:1fr 1fr;gap:12px}.card{padding:18px}
   .section-title{font-size:2.2rem}.section-subtitle{font-size:.84rem;padding:0 8px}
