@@ -1727,6 +1727,36 @@ if(mobileMenuToggle && navLinks){
   }
 }
 </style>
+
+<style>
+/* ===== Compact vertical spacing between sections ===== */
+section{padding:38px 0;}
+.section-head{margin-bottom:20px;}
+.experience-strip{padding:13px 0 16px;}
+.partner-strip{padding:14px 0;}
+.journey{padding:16px 0 8px;}
+.contact{gap:22px;}
+footer{padding:22px 0;}
+
+/* Reduce the unused vertical space in the main hero without changing its layout */
+@media (min-width:1101px){
+  .video-hero{min-height:700px;padding-bottom:18px;}
+  .video-stage{height:650px;}
+}
+
+@media (max-width:900px){
+  section{padding:34px 0;}
+  .section-head{margin-bottom:18px;}
+  .experience-strip{padding:12px 0 14px;}
+  .partner-strip{padding:13px 0;}
+}
+
+@media (max-width:560px){
+  section{padding:30px 0;}
+  .section-head{margin-bottom:16px;}
+}
+</style>
+
 </body>
 
 <style>
