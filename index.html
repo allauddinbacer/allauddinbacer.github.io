@@ -1867,4 +1867,94 @@ footer{padding:22px 0;}
   .video-stage .vb3{left:44% !important;top:29% !important;bottom:auto !important;transform:scale(.94) !important;}
   .video-stage .vb5{left:44% !important;bottom:22% !important;top:auto !important;transform:scale(.94) !important;}
 }
+</style><style>
+/* ===== FINAL HERO ADJUSTMENT ===== */
+/* Profile slightly left + all floating badges shift together */
+
+@media (min-width:901px){
+
+  /* Move profile picture slightly left */
+  .video-photo-wrap{
+    left:74% !important;
+  }
+
+  /* Move portrait halo/glow with the picture */
+  .video-stage:before,
+  .video-stage:after,
+  .video-glow{
+    left:74% !important;
+  }
+
+  /* Shift ALL floating badges left by the same amount */
+  .video-stage .video-badge{
+    translate:-28px 0;
+    
+    /* Make text clearly visible */
+    color:#f2fbff !important;
+    opacity:1 !important;
+    
+    /* Lighter transparent HUD box */
+    background:rgba(2,12,20,.48) !important;
+    border-color:rgba(0,229,255,.58) !important;
+    
+    box-shadow:
+      0 0 18px rgba(0,229,255,.10),
+      inset 0 0 12px rgba(0,229,255,.035) !important;
+    
+    text-shadow:0 0 8px rgba(0,229,255,.35);
+  }
+
+  /* Make the small labels brighter */
+  .video-stage .video-badge .badge-label{
+    color:#9eeeff !important;
+    opacity:1 !important;
+  }
+
+  /* Main words */
+  .video-stage .video-badge strong{
+    color:#ffffff !important;
+    opacity:1 !important;
+    text-shadow:0 0 10px rgba(0,229,255,.40);
+  }
+
+  /* Icons */
+  .video-stage .video-badge .badge-icon{
+    color:#00e5ff !important;
+    text-shadow:0 0 10px rgba(0,229,255,.65);
+  }
+
+  /* Secondary text such as Years / specialist */
+  .video-stage .video-badge em{
+    color:#c8f7ff !important;
+    opacity:1 !important;
+  }
+}
+
+/* Tablet */
+@media (min-width:651px) and (max-width:900px){
+
+  .video-photo-wrap{
+    left:48% !important;
+  }
+
+  .video-stage .video-badge{
+    color:#f2fbff !important;
+    opacity:1 !important;
+    background:rgba(2,12,20,.55) !important;
+    border-color:rgba(0,229,255,.55) !important;
+    text-shadow:0 0 7px rgba(0,229,255,.30);
+  }
+
+  .video-stage .video-badge .badge-label{
+    color:#9eeeff !important;
+  }
+
+  .video-stage .video-badge strong{
+    color:#ffffff !important;
+  }
+
+  .video-stage .video-badge .badge-icon{
+    color:#00e5ff !important;
+  }
+}
 </style>
