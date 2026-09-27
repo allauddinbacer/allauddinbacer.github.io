@@ -95,9 +95,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(1,9,16,.78)
 .experience-label{font:700 .68rem "Space Mono",monospace;letter-spacing:.24em;color:var(--cyan);margin-bottom:13px;text-align:left}
 .experience-track{display:flex;align-items:stretch;gap:0;width:max-content;animation:logoSlide 30s linear infinite}
 .experience-track:hover{animation-play-state:paused}
-.org-logo{min-width:245px;margin-right:10px;padding:12px 18px;display:flex;flex-direction:row;align-items:center;gap:12px;opacity:.82;transition:.25s;background:rgba(7,23,34,.72);border:1px solid rgba(0,217,255,.13);border-radius:7px;box-shadow:0 6px 18px rgba(0,0,0,.18);white-space:normal}
-.org-logo:hover{opacity:1;transform:translateY(-2px);border-color:rgba(0,217,255,.38);background:rgba(8,28,40,.9);box-shadow:0 10px 24px rgba(0,0,0,.25),0 0 18px rgba(0,217,255,.06)}
-.org-logo b{display:block;font-size:.82rem;line-height:1.15;letter-spacing:.045em;color:#dce8ee;white-space:nowrap}.org-logo small{display:block;font-size:.59rem;line-height:1.3;color:#8398a6;margin-top:4px}.org-logo.active{opacity:1;border-color:rgba(0,217,255,.42);background:rgba(7,29,41,.9);box-shadow:0 0 22px rgba(0,217,255,.10)}.org-logo.active b{color:var(--cyan);text-shadow:0 0 12px rgba(0,217,255,.35)}
+.org-logo{min-width:190px;padding:5px 24px;border-right:1px solid rgba(141,162,178,.22);display:flex;flex-direction:column;justify-content:center;gap:2px;opacity:.78;transition:.25s}
+.org-logo b{font-size:.85rem;letter-spacing:.04em;color:#dce8ee}.org-logo small{font-size:.62rem;line-height:1.25;color:#8398a6}.org-logo.active{opacity:1}.org-logo.active b{color:var(--cyan);text-shadow:0 0 12px rgba(0,217,255,.35)}
 @keyframes logoSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .partner-strip{border-top:1px solid rgba(0,217,255,.28);border-bottom:1px solid rgba(0,217,255,.10);padding:18px 0;background:rgba(1,13,22,.72)}.partner-row{display:flex;justify-content:space-around;align-items:center;gap:25px;flex-wrap:wrap;color:#dce7ed;font-weight:700;letter-spacing:.5px}.partner-row span{opacity:.72;font-size:.95rem}.partner-row span+span{border-left:1px solid rgba(255,255,255,.2);padding-left:28px}
 section{padding:55px 0;border-top:1px solid rgba(0,217,255,.08)}
@@ -252,6 +251,78 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
 @media(max-width:900px){.video-hero{min-height:820px}.video-stage{height:730px}.video-photo-wrap{width:400px;height:560px}.video-photo-frame{width:390px;height:550px}.video-badge{min-width:160px}.vb1{left:2%}.vb2{right:1%}.vb3{left:1%}.vb4{right:0}.vb5{left:1%}.vb6{right:0}.vb7{left:6%}}
 @media(max-width:650px){.video-hero{min-height:760px}.video-stage{height:660px}.video-photo-wrap{top:8%;width:310px;height:470px}.video-photo-frame{width:305px;height:460px}.video-badge{min-width:0;width:auto;padding:8px 9px}.video-badge .badge-label{font-size:.46rem}.video-badge strong{font-size:.63rem}.vb1{left:0}.vb2{right:0}.vb3{left:0}.vb4{right:0}.vb5{left:0}.vb6{right:0}.vb7{left:4%}}
 
+
+/* Refined organization buttons — clearer hierarchy and spacing */
+.org-logo{
+  min-width:230px;
+  min-height:62px;
+  margin-right:10px;
+  padding:10px 18px;
+  border:1px solid rgba(141,162,178,.20);
+  border-radius:7px;
+  background:rgba(5,20,31,.72);
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:12px;
+  opacity:.84;
+  transition:.25s;
+}
+.org-logo:hover{
+  border-color:rgba(0,217,255,.42);
+  background:rgba(6,25,38,.90);
+  opacity:1;
+}
+.org-mark{
+  flex:0 0 auto;
+  min-width:38px;
+  text-align:center;
+  font:700 .68rem "Space Mono",monospace;
+  letter-spacing:.04em;
+  color:#8da2b2;
+}
+.org-logo > div{
+  min-width:0;
+  overflow:hidden;
+}
+.org-logo b{
+  display:block;
+  font-size:.80rem;
+  line-height:1.15;
+  letter-spacing:.035em;
+  color:#e3edf2;
+  white-space:nowrap;
+}
+.org-logo small{
+  display:block;
+  margin-top:4px;
+  font-size:.59rem;
+  line-height:1.25;
+  color:#8298a6;
+  white-space:normal;
+}
+.org-logo.active{
+  opacity:1;
+  border-color:rgba(0,217,255,.46);
+  background:rgba(0,35,49,.78);
+  box-shadow:inset 0 0 18px rgba(0,217,255,.045);
+}
+.org-logo.active .org-mark{color:var(--cyan)}
+.org-logo.active b{
+  color:var(--cyan);
+  text-shadow:0 0 12px rgba(0,217,255,.28);
+}
+@media(max-width:900px){
+  .org-logo{min-width:205px;min-height:58px;padding:9px 15px;gap:10px}
+  .org-logo b{font-size:.75rem}
+  .org-logo small{font-size:.56rem}
+}
+@media(max-width:560px){
+  .org-logo{min-width:185px;min-height:54px;padding:8px 13px;gap:9px;margin-right:8px}
+  .org-mark{min-width:32px;font-size:.61rem}
+  .org-logo b{font-size:.69rem}
+  .org-logo small{font-size:.52rem}
+}
 </style>
 
 <style>
@@ -368,7 +439,7 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
   .video-intro .intro-role{max-width:540px;}
   .video-intro .intro-copy{max-width:560px;}
 
-  .video-photo-wrap{left:70%;top:7%;width:440px;height:570px;z-index:8;}
+  .video-photo-wrap{left:65%;top:7%;width:440px;height:570px;z-index:8;}
   .video-photo-frame{width:420px;height:550px;}
   .video-stage:before{left:70%;top:5%;width:620px;height:620px;}
   .video-stage:after{left:70%;top:10%;width:540px;height:540px;}
@@ -489,7 +560,7 @@ footer{padding:30px 0;border-top:1px solid rgba(0,217,255,.1);color:var(--dim);f
   .vc-tl{left:24%;top:40%}.vc-tr{right:24%;top:40%}.vc-bl{left:24%;bottom:9%}.vc-br{right:24%;bottom:9%}
   .experience-strip{padding:14px 0 18px}
   .experience-label{font-size:.58rem;text-align:center;letter-spacing:.16em}
-  .org-logo{min-width:205px;margin-right:8px;padding:10px 13px;gap:9px;border-radius:6px}.org-logo b{font-size:.68rem}.org-logo small{font-size:.52rem;line-height:1.25;margin-top:3px}.org-logo .org-mark{flex:0 0 auto}
+  .org-logo{min-width:155px;padding:4px 16px}.org-logo b{font-size:.72rem}.org-logo small{font-size:.55rem}
   .partner-row{gap:12px}.partner-row span{font-size:.78rem}.partner-row span+span{padding-left:14px}
   .cards{grid-template-columns:1fr 1fr;gap:12px}.card{padding:18px}
   .section-title{font-size:2.2rem}.section-subtitle{font-size:.84rem;padding:0 8px}
@@ -1655,6 +1726,47 @@ if(mobileMenuToggle && navLinks){
     transform:none !important; text-align:left !important;
   }
 }
+</style>
+
+<style>
+/* ===== Compact vertical spacing between sections ===== */
+section{padding:38px 0;}
+.section-head{margin-bottom:20px;}
+.experience-strip{padding:13px 0 16px;}
+.partner-strip{padding:14px 0;}
+.journey{padding:16px 0 8px;}
+.contact{gap:22px;}
+footer{padding:22px 0;}
+
+/* Reduce the unused vertical space in the main hero without changing its layout */
+@media (min-width:1101px){
+  .video-hero{min-height:700px;padding-bottom:18px;}
+  .video-stage{height:650px;}
+}
+
+@media (max-width:900px){
+  section{padding:34px 0;}
+  .section-head{margin-bottom:18px;}
+  .experience-strip{padding:12px 0 14px;}
+  .partner-strip{padding:13px 0;}
+}
+
+@media (max-width:560px){
+  section{padding:30px 0;}
+  .section-head{margin-bottom:16px;}
+}
+</style>
+
+
+<style>
+/* Floating keyword treatment: no boxes */
+.video-badge{min-width:0!important;width:auto!important;padding:5px 8px!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#d7e4ea!important;text-shadow:0 0 14px rgba(0,229,255,.22)}
+.video-badge:before,.video-badge:after{display:none!important}
+.video-badge .badge-label{display:block;color:rgba(0,217,255,.72)!important;font-size:.50rem!important;letter-spacing:1.7px!important;margin-bottom:3px!important;text-transform:uppercase}
+.video-badge strong{display:block;color:#dce9ee!important;font-size:.82rem!important;line-height:1.25;font-weight:700}
+.video-badge em{color:#8fa5b1!important;font-size:.68rem!important;font-style:normal}
+.video-badge strong em{color:var(--cyan)!important}
+@media(max-width:900px){.video-badge{display:none!important}}
 </style>
 </body>
 
