@@ -1757,6 +1757,17 @@ footer{padding:22px 0;}
 }
 </style>
 
+
+<style>
+/* Floating keyword treatment: no boxes */
+.video-badge{min-width:0!important;width:auto!important;padding:5px 8px!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#d7e4ea!important;text-shadow:0 0 14px rgba(0,229,255,.22)}
+.video-badge:before,.video-badge:after{display:none!important}
+.video-badge .badge-label{display:block;color:rgba(0,217,255,.72)!important;font-size:.50rem!important;letter-spacing:1.7px!important;margin-bottom:3px!important;text-transform:uppercase}
+.video-badge strong{display:block;color:#dce9ee!important;font-size:.82rem!important;line-height:1.25;font-weight:700}
+.video-badge em{color:#8fa5b1!important;font-size:.68rem!important;font-style:normal}
+.video-badge strong em{color:var(--cyan)!important}
+@media(max-width:900px){.video-badge{display:none!important}}
+</style>
 </body>
 
 <style>
